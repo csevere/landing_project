@@ -1,30 +1,38 @@
 {
   "name": "octagon_project",
   "version": "1.0.0",
-  "description": "bootstrap 4 workflow",
+  "description": "landing page assignment",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "4.0.0-beta",
     "font-awesome": "^4.7.0",
+    "gulp-cssnano": "^2.1.2",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.5"
   },
   "devDependencies": {
-    "browser-sync": "^2.18.13",
+    "browser-sync": "^2.23.5",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-cache": "^1.0.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.4",
+    "run-sequence": "^2.2.1"
   },
   "scripts": {
     "start": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/csevere/CS_bs4starter-.git"
+    "url": "https://github.com/csevere/octagon_project"
   },
   "author": "Carla Severe",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/csevere/CS_bs4starter-/issues"
+    "url": "https://github.com/csevere/octagon_project"
   },
-  "homepage": "https://github.com/csevere/CS_bs4starter-#readme"
+  "homepage": "https://github.com/csevere/octagon_project"
 }
