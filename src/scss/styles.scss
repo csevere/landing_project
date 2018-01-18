@@ -11,7 +11,7 @@ $lead-text: #dc3545;
 $lead-bg:#dc3545;
 $background:#f8f9fa;  
 $hover: #f46a60; 
-$primary-overlay: rgba(142, 60, 68, 0.7);
+$primary-overlay: rgba(82, 75, 76, 0.3);
 $lead-font: 'Poppins', sans-serif; 
 $title-font: 'Alegreya Sans', sans-serif;
 
@@ -33,6 +33,9 @@ body{
 
 //NAVBAR
 .navbar{
+	box-shadow: 2px 2px 5px $border; 
+  opacity: 0.9;
+  background: $background;
 	a{
 		color:$lead-text !important;
 		letter-spacing: 1px;  
@@ -58,7 +61,7 @@ body{
     background-position: center; 
 		background-size: cover; 
     height: 100%;
-		min-height: 37rem;
+		min-height: 45rem;
 		position: relative; 
     width: 100%; 
 		
@@ -79,33 +82,80 @@ body{
 			height: 100%; 
 			letter-spacing: 1px; 
 			margin: auto;
-			width: 70%;
+			width: 60%;
 			
 		}
 }
 
 
-	//INFO CARD
-	.info-card{
-		.card{
-			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-			border: 1px solid $border !important;
+//INFO CARDS
+.info-card, .info-card2, .info-card3, .info-card4{
+	.card{
+		box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
+		border: 1px solid $border !important;
+		border-radius: 0; 
+		margin: -60px auto 30px;
+		.card-title{
+			font-family: $title-font;
+			color: $lead-text;  
+		} 
+		.btn{
+			background-color: $lead-bg; 
 			border-radius: 0; 
-			margin: -60px auto 30px;
-			.card-title{
-				font-family: $title-font;
-				color: $lead-text;  
-			} 
-			.btn{
-				background-color: $lead-bg; 
-				border-radius: 0; 
-			}
 		}
 	}
+}
+
+.info-card2{
+	position: relative; 
+	.info-card-image2{
+		border: none !important; 
+		margin: 1rem auto 0;
+		img{
+			border-radius: 0; 
+			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
+			position: absolute; 
+			z-index: 0; 
+		}	
+	}
+	.info-card-text{
+		margin: 33rem 37rem 0;
+		position: absolute; 
+		z-index: 2; 
+	}
+}
+
+
+.info-card3{
+	position: relative;
+	.info-card-image3{
+		border: none !important;
+		margin: 50rem auto 0;  
+		position: relative; 
+		 
+		img{
+			border-radius: 0; 
+			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
+			position: absolute; 
+			z-index: 0; 
+		}	
+	}
+	.info-card-text {
+		position: absolute;
+		margin: 23rem 6rem 0;
+		z-index: 2;  
+	} 
+}
+
+.info-card4{
+	margin: 60rem auto 30px;
+}
+
 
 	//CAROUSEL
 
 .carousel{
+	top: 49rem;
 	.slider{
 		margin: 0 auto; 
 		width: 80%;
@@ -137,6 +187,33 @@ body{
 				max-width: 100%; 
 			}
 		}
+	}
+}
+
+//FOOTER 
+footer{
+	font-family: 'Lato', sans-serif;
+	background: black;
+	.fa{
+		font-size: 1.3rem;
+		color: $lead-text; 
+	}
+	.footer-links1, .footer-links2{
+		a{
+			text-decoration: none;
+			color: white;
+
+		}
+	}
+	.footer-links1{
+		a{
+			border-bottom: 1px solid $lead-text;
+			padding-bottom: 3px; 
+			line-height: 2px; 
+		}
+	}
+	.rights{
+		font-size: 13px; 
 	}
 }
 

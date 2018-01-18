@@ -9,30 +9,33 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 16px; }
 
-.navbar a {
-  color: #dc3545 !important;
-  letter-spacing: 1px; }
-  .navbar a:hover {
-    color: #f46a60 !important; }
-
-.navbar .nav-item a {
-  text-decoration: none;
-  color: #dc3545 !important; }
-  .navbar .nav-item a:hover {
-    color: #f46a60 !important; }
+.navbar {
+  box-shadow: 2px 2px 5px #dc3545;
+  opacity: 0.9;
+  background: #f8f9fa; }
+  .navbar a {
+    color: #dc3545 !important;
+    letter-spacing: 1px; }
+    .navbar a:hover {
+      color: #f46a60 !important; }
+  .navbar .nav-item a {
+    text-decoration: none;
+    color: #dc3545 !important; }
+    .navbar .nav-item a:hover {
+      color: #f46a60 !important; }
 
 .showcase {
   background-image: url("../images/home-bg.jpeg");
   background-position: center;
   background-size: cover;
   height: 100%;
-  min-height: 37rem;
+  min-height: 45rem;
   position: relative;
   width: 100%; }
   .showcase .primary-overlay {
     align-content: center;
     display: grid;
-    background: rgba(142, 60, 68, 0.7);
+    background: rgba(82, 75, 76, 0.3);
     position: absolute;
     top: 0;
     left: 0;
@@ -44,40 +47,92 @@ body {
     height: 100%;
     letter-spacing: 1px;
     margin: auto;
-    width: 70%; }
+    width: 60%; }
 
-.info-card .card {
+.info-card .card, .info-card2 .card, .info-card3 .card, .info-card4 .card {
   box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
   border: 1px solid #dc3545 !important;
   border-radius: 0;
   margin: -60px auto 30px; }
-  .info-card .card .card-title {
+  .info-card .card .card-title, .info-card2 .card .card-title, .info-card3 .card .card-title, .info-card4 .card .card-title {
     font-family: "Alegreya Sans", sans-serif;
     color: #dc3545; }
-  .info-card .card .btn {
+  .info-card .card .btn, .info-card2 .card .btn, .info-card3 .card .btn, .info-card4 .card .btn {
     background-color: #dc3545;
     border-radius: 0; }
 
-.carousel .slider {
-  margin: 0 auto;
-  width: 80%; }
-  .carousel .slider .fa-arrow-circle-right {
-    right: -60px; }
-  .carousel .slider .fa-arrow-circle-left {
-    left: -60px; }
-  .carousel .slider .fa-arrow-circle-right, .carousel .slider .fa-arrow-circle-left {
-    font-size: 2rem;
-    padding: 0;
+.info-card2 {
+  position: relative; }
+  .info-card2 .info-card-image2 {
+    border: none !important;
+    margin: 1rem auto 0; }
+    .info-card2 .info-card-image2 img {
+      border-radius: 0;
+      box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
+      position: absolute;
+      z-index: 0; }
+  .info-card2 .info-card-text {
+    margin: 33rem 37rem 0;
     position: absolute;
-    top: 50%;
-    display: block;
-    transform: translate(0, -50%);
-    cursor: pointer; }
-  .carousel .slider .slider-image {
-    max-width: 100%; }
-    .carousel .slider .slider-image img {
-      align-items: center;
-      pointer-events: visible;
-      cursor: pointer;
-      max-height: 100%;
+    z-index: 2; }
+
+.info-card3 {
+  position: relative; }
+  .info-card3 .info-card-image3 {
+    border: none !important;
+    margin: 50rem auto 0;
+    position: relative; }
+    .info-card3 .info-card-image3 img {
+      border-radius: 0;
+      box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
+      position: absolute;
+      z-index: 0; }
+  .info-card3 .info-card-text {
+    position: absolute;
+    margin: 23rem 6rem 0;
+    z-index: 2; }
+
+.info-card4 {
+  margin: 60rem auto 30px; }
+
+.carousel {
+  top: 49rem; }
+  .carousel .slider {
+    margin: 0 auto;
+    width: 80%; }
+    .carousel .slider .fa-arrow-circle-right {
+      right: -60px; }
+    .carousel .slider .fa-arrow-circle-left {
+      left: -60px; }
+    .carousel .slider .fa-arrow-circle-right, .carousel .slider .fa-arrow-circle-left {
+      font-size: 2rem;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      display: block;
+      transform: translate(0, -50%);
+      cursor: pointer; }
+    .carousel .slider .slider-image {
       max-width: 100%; }
+      .carousel .slider .slider-image img {
+        align-items: center;
+        pointer-events: visible;
+        cursor: pointer;
+        max-height: 100%;
+        max-width: 100%; }
+
+footer {
+  font-family: 'Lato', sans-serif;
+  background: black; }
+  footer .fa {
+    font-size: 1.3rem;
+    color: #dc3545; }
+  footer .footer-links1 a, footer .footer-links2 a {
+    text-decoration: none;
+    color: white; }
+  footer .footer-links1 a {
+    border-bottom: 1px solid #dc3545;
+    padding-bottom: 3px;
+    line-height: 2px; }
+  footer .rights {
+    font-size: 13px; }
