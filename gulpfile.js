@@ -9,6 +9,8 @@ const imagemin = require('gulp-imagemin');
 const cache = require('gulp-cache'); 
 const del = require('del'); 
 const runSequence = require('run-sequence'); 
+const postcss = require('gulp-postcss');
+const autoprefixer = require('gulp-autoprefixer'); 
 
 //Compile Sass & Inject Into Browser
 gulp.task('sass', function(){
@@ -38,16 +40,37 @@ gulp.task('serve', ['sass'], function(){
 	gulp.watch("src/*.html").on('change', browserSync.reload);
 });
 
+
+//POSTCSS & Plugins 
+
+var autoprefixerOptions = {
+  browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
+};
+
+gulp.task('styles', function () {
+	return gulp.src('src/styles.css')
+		.pipe(
+		 	postcss([
+				require('postcss-font-magician')({ foundries: 'bootstrap google'})
+
+		 ]))
+		 .pipe(autoprefixer(autoprefixerOptions))
+		 .pipe(gulp.dest('dist')
+	);
+});
+
+
+
 // Move Fonts Folder to src/fonts
 gulp.task('fonts', function(){
 	return gulp.src('node_modules/font-awesome/fonts/*')
-	.pipe(gulp.dest("src/fonts")); 
+	.pipe(gulp.dest('src/fonts')); 
 }); 
 
 // Move Font Awesome CSS to src/css to src
 gulp.task('fa', function(){
 	return gulp.src('node_modules/font-awesome/css/font-awesome.min.css')
-	.pipe(gulp.dest("src/css")); 
+	.pipe(gulp.dest('src/css')); 
 }); 
 
 gulp.task('fonts', function() {
@@ -68,7 +91,7 @@ gulp.task('useref', function(){
 
 //IMAGES
 gulp.task('images', function(){
-  return gulp.src('src/images/**/*.+(png|jpg|gif|svg)')
+  return gulp.src('src/images/**/*.+(png|jpg|gif|svg|jpeg)')
   .pipe(cache(imagemin({
 		//settings interlaced to true
 		interlaced: true
@@ -90,7 +113,7 @@ gulp.task('clean:dist', function() {
 
 //Build Sequences 
 gulp.task('default', function (callback) {
-  runSequence(['serve','fa', 'js'],
+  runSequence(['serve','fa', 'js', 'styles'],
     callback
   )
 });
@@ -101,9 +124,4 @@ gulp.task('build', function(callback) {
 		callback
 	)
 });
-
-
-
-// //run gulp  
-// gulp.task('build', ['js', 'serve', 'fa', 'fonts', 'useref', 'images', 'clean:dist']); 
 

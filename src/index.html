@@ -5,19 +5,149 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<title>Ocatgon Project</title>
+		<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+		<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 		<!--build:css css/styles.min.css-->
 		<link rel="stylesheet" href="css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/bootstrap.css">
 		<link rel="stylesheet" href="css/styles.css">
 		<!--endbuild-->
-
+		<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:700|Lato:700|Poppins|Raleway:700" rel="stylesheet">
 	</head>
 
-	<body>
+	<body id="home">
 
-		<h1 class = "title">Bootstrap 4 Starter Pack</h1>
-		<p class = "text">Version 4.0.0-beta</p>
+			<nav class="navbar navbar-expand-md">
+				<div class="container">
+					<a href="index.html" class="navbar-brand">Phantom Reality</a>
+					<button class="navbar-toggler" data-toggle="collapse" data-target="#navNavbar"><span class="navbar-toggler-icon"></span></button>
+					<div class="collapse navbar-collapse" id="navNavbar">
+						<ul class="navbar-nav ml-auto">
+								<li class="nav-item">
+									<a href="#home" class="nav-link">About</a>
+								</li>
+								<li class="nav-item">
+									<a href="#home" class="nav-link">Careers</a>
+								</li>
+								<li class="nav-item">
+									<a href="#home" class="nav-link">Products</a>
+								</li>
+								<li class="nav-item">
+									<a href="#home" class="nav-link">News</a>
+								</li>
+								<li class="nav-item">
+									<a href="contact.html" class="nav-link">Contact</a>
+								</li>
+							</ul>
+					</div>
+				</div>
+			</nav>
 
+		<!-- HERO IMAGE -->
+		<section class="showcase">
+			<div class="primary-overlay text-center text-white">
+				<div class="container">
+					<div class="row p-3">
+							<h1 class="display-4">
+								Building games and ideas that move us forward
+							</h1>
+							<p class="lead py-3">
+								Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consectetur</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- INFOCARD -->
+		<section id="info" class="info-card">
+			<div class="card w-75 text-dark p-4">
+				<div class="card-body">
+					<div class="card-title">
+						<h1 class="display-4">Leaders in Virtual Reality</h1>
+					</div>
+					<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+							elit. Quibusdam nam amet, adipisci neque non magni 
+							officia, odit veniam id eius minima consectetur</p>
+					<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+							elit. Quibusdam nam amet, adipisci neque non magni 
+							officia, odit veniam id eius minima consecteturLorem ipsum dolor, sit amet consectetur adipisicing 
+							elit. Quibusdam nam amet</p>
+					<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+							elit. Quibusdam nam amet, adipisci neque non magni 
+							officia, odit veniam id eius minima consectetur</p>
+					
+					<a href="#" class="btn btn-lg text-light P-3">
+							<i class="fa fa-arrow-right"></i> Learn More</a>
+				</div>
+			</div>		
+		</section>
+
+		<!-- INFOCARD w/ IMG1 -->
+		<!-- <section id="info" class="info-card mb-5">
+				<div class="card w-75 text-dark p-4">
+					<div class="card-body">
+						<div class="card-title">
+							<h1 class="display-4">Leaders in Virtual Reality</h1>
+						</div>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consectetur</p>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consecteturLorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet</p>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consectetur</p>
+						
+						<a href="#" class="btn btn-lg text-light P-3">
+								<i class="fa fa-arrow-right"></i> Learn More</a>
+					</div>
+				</div>		
+		</section> -->
+
+		<!-- INFOCARD w/ IMG2 -->
+		<!-- <section id="info" class="info-card">
+				<div class="card w-75 text-dark p-4">
+					<div class="card-body">
+						<div class="card-title">
+							<h1 class="display-4">Leaders in Virtual Reality</h1>
+						</div>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consectetur</p>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consecteturLorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet</p>
+						<p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing 
+								elit. Quibusdam nam amet, adipisci neque non magni 
+								officia, odit veniam id eius minima consectetur</p>
+						
+						<a href="#" class="btn btn-lg text-light P-3">
+								<i class="fa fa-arrow-right"></i> Learn More</a>
+					</div>
+				</div>		
+		</section> -->
+
+		<!-- CAROUSEL  -->
+		<section class="carousel container"> 
+			<div class="slider">
+					<div class="slider-image"><img src="../images/slider_pic1.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic2.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic3.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic4.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic5.jpg"></div>
+					<div class="slider-image"><img src="../images/slider_pic1.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic2.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic3.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic4.jpeg"></div>
+					<div class="slider-image"><img src="../images/slider_pic5.jpg"></div>
+			</div>
+		</section>
+		
 
 		<!--build:js js/main.min.js -->
 		<script src="js/jquery.min.js"></script>
@@ -25,6 +155,8 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/main.js"></script>
 		<!-- endbuild -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="slick/slick.min.js"></script>
 		
 
 	</body>
