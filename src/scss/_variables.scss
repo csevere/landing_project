@@ -7,3 +7,35 @@ $hover: #f46a60;
 $primary-overlay: rgba(82, 75, 76, 0.3);
 $lead-font: 'Poppins', sans-serif; 
 $title-font: 'Alegreya Sans', sans-serif;
+
+//media 
+$mobile: 414px; 
+$lgtablet: 992px;
+
+@media (max-width:$mobile){
+     
+}
+
+
+// html {
+//     font-size: 1rem;
+//   }
+  
+//   @include media-breakpoint-up(sm) {
+//     html {
+//       font-size: 1.2rem;
+//     }
+//   }
+  
+//   @include media-breakpoint-up(md) {
+//     html {
+//       font-size: 1.4rem;
+//     }
+//   }
+  
+//   @include media-breakpoint-up(lg) {
+//     html {
+//       font-size: 1.6rem;
+//     }
+//   }
+
