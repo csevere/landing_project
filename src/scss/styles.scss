@@ -5,7 +5,7 @@
 //     width: percentage(5/7); 
 // }
 
-@import 'infocards';
+// @import 'infocards';
 @import 'variables'; 
 @import 'contact'; 
 
@@ -15,7 +15,7 @@
 // }
 
 *{  
-	// background-color: rgba(0,255,0,0.1); 
+	background-color: rgba(0,255,0,0.1); 
 	box-sizing: border-box;
     
 }
@@ -28,10 +28,13 @@ body{
 	background: $background; 
 	font-family: $lead-font; 
 	font-size: 16px;
+	// margin-top: 105px;
+	border:5px solid cyan; 
 }
 
 //NAVBAR
 .navbar{
+	border: 5px solid pink; 
 	// box-shadow: 2px 2px 5px $border; 
 	// background: $background;
 	background: transparent; 
@@ -61,17 +64,23 @@ body{
 
 //HERO IMAGE
 .showcase{
-    background-image: url('../images/home-bg.jpeg'); 
-    background-position: center; 
-		background-size: cover; 
-		min-height: 45rem;
-    height: 100%;
-		position: relative; 
-    width: 100%; 
+	border: 5px solid red; 
+  background-image: url('../images/home-bg.jpeg'); 
+  background-position: center; 
+	background-size: cover; 
+	min-height: 45rem;
+	position: relative; 
+	height: 100%; 
+	width: 100%;
+	top: 0;
+	left: 0; 
+
+	// @media (max-width:$mobile){   
+	// }
+  
 		
 		.primary-overlay{
 			align-content: center;	
-			display: grid; 
 			background: $primary-overlay; 
 			position: absolute; 
 			top: 0;
@@ -80,15 +89,21 @@ body{
 			height: 100%; 
 		}
 
-		h1,.lead{
-			align-self: center;
-			font-family: $title-font;
-			height: 100%; 
-			letter-spacing: 1px; 
-			margin: auto;
-			width: 60%;
-			
+		.display{
+			margin-top: 15rem; 
+
+			h1,.lead{
+				align-self: center;
+				font-family: $title-font;
+				height: 65%; 
+				letter-spacing: 1px; 
+				margin: auto;
+				width: 100%;
+				
+			}
+
 		}
+
 }
 
 
@@ -153,6 +168,9 @@ footer{
 		font-size: 0.8rem; 
 	}
 }
+
+
+
 
 // HOVER EFFECTS
 // GROW
