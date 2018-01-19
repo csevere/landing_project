@@ -196,6 +196,9 @@ footer {
   footer .rights {
     font-size: 13px; }
 
+.contact {
+  margin-top: -36rem; }
+
 .hvr-grow {
   display: inline-block;
   vertical-align: middle;
