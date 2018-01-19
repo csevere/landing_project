@@ -28,6 +28,7 @@ body{
 	background: $background; 
 	font-family: $lead-font; 
 	font-size: 16px;
+	// margin-top: 105px; 
 }
 
 //NAVBAR
@@ -63,15 +64,14 @@ body{
 .showcase{
     background-image: url('../images/home-bg.jpeg'); 
     background-position: center; 
-		background-size: cover; 
-		min-height: 45rem;
+	background-size: cover; 
+	min-height: 45rem;
     height: 100%;
-		position: relative; 
+	position: relative; 
     width: 100%; 
 		
 		.primary-overlay{
 			align-content: center;	
-			display: grid; 
 			background: $primary-overlay; 
 			position: absolute; 
 			top: 0;
@@ -80,15 +80,21 @@ body{
 			height: 100%; 
 		}
 
-		h1,.lead{
-			align-self: center;
-			font-family: $title-font;
-			height: 100%; 
-			letter-spacing: 1px; 
-			margin: auto;
-			width: 60%;
-			
+		.display{
+			margin-top: 15rem; 
+
+			h1,.lead{
+				align-self: center;
+				font-family: $title-font;
+				height: 65%; 
+				letter-spacing: 1px; 
+				margin: auto;
+				width: 100%;
+				
+			}
+
 		}
+
 }
 
 
@@ -153,6 +159,9 @@ footer{
 		font-size: 0.8rem; 
 	}
 }
+
+
+
 
 // HOVER EFFECTS
 // GROW
