@@ -5,15 +5,14 @@
 //     width: percentage(5/7); 
 // }
 
+@import 'infocards';
+@import 'variables'; 
+@import 'contact'; 
 
-$border: #dc3545;
-$lead-text: #dc3545;
-$lead-bg:#dc3545;
-$background:#f8f9fa;  
-$hover: #f46a60; 
-$primary-overlay: rgba(82, 75, 76, 0.3);
-$lead-font: 'Poppins', sans-serif; 
-$title-font: 'Alegreya Sans', sans-serif;
+// pre {
+//   -moz-tab-size: 2;
+//   tab-size: 2;
+// }
 
 *{  
 	// background-color: rgba(0,255,0,0.1); 
@@ -65,8 +64,8 @@ body{
     background-image: url('../images/home-bg.jpeg'); 
     background-position: center; 
 		background-size: cover; 
-    height: 100%;
 		min-height: 45rem;
+    height: 100%;
 		position: relative; 
     width: 100%; 
 		
@@ -90,141 +89,6 @@ body{
 			width: 60%;
 			
 		}
-}
-
-//INFO CARDS
-.info-card, .info-card2, .info-card3, .info-card4, .info-card5{
-	.card{
-		box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-		border: 1px solid $border !important;
-		border-radius: 0; 
-		margin: -60px auto 30px;
-		opacity: 0.95; 
-		.card-title{
-			font-family: $title-font;
-			color: $lead-text;  
-		} 
-		.btn{
-			background-color: $lead-bg; 
-			border-radius: 0; 
-			&:hover{
-				background-color: #fff;
-				color: $lead-text !important;
-				border: 1px solid $border;   
-			}
-		}
-	}
-}
-
-.info-card2{
-	position: relative; 
-	&:hover{
-		animation-name: cardmove;
-		animation-duration: 5s;
-		@keyframes cardmove {
-			from {left: 0px;}
-			to {left: 100px;}
-		}
-	}
-	.info-card-image2{
-		border: none !important; 
-		margin: 1rem auto 0;
-		img{
-			border-radius: 0; 
-			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-			position: absolute; 
-			z-index: 0; 
-		}	
-	}
-	.info-card-text{
-		border: none !important; 
-		margin: 33rem 37rem 0;
-		opacity: 0.95; 
-		position: absolute; 
-		z-index: 2; 
-	}
-}
-
-
-.info-card3{
-	position: relative;
-	&:hover{
-		animation-name: cardmove2;
-		animation-duration: 5s;
-		@keyframes cardmove2 {
-			from {right: 0px;}
-			to {right: 90px;}
-		}
-	}
-	.info-card-image3{
-		border: none !important;
-		margin: 50rem auto 0;  
-		// position: relative; 
-		img{
-			border-radius: 0; 
-			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-			position: absolute; 
-			z-index: 0; 
-		}	
-	}
-	.info-card-text {
-		border: none !important; 
-		opacity: 0.95; 
-		position: absolute;
-		margin: 23rem 6rem 0;
-		z-index: 2;  
-	} 
-}
-
-.info-card4{
-	margin: 60rem auto 0;
-}
-
-.info-card5{
-	margin: 9rem auto 0;
-
-	.info-card-video{
-		border: none !important; 
-		box-shadow: none; 
-		width: 100%;
-		
-		.info-primary-overlay{
-			align-content: center;
-			border: none !important; 
-			display: grid;
-			// height: 100%; 
-			// margin: 0 auto;
-			// position: relative;
-			// padding: 3rem;
-			// border: 0px solid $lead-text; 	
-			// width: 100%;
-			z-index: 1;  
-			video{
-				border:none; 
-				box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-				margin-left: -3em; 
-				z-index: 0; 
-				width: 110%;
-			}
-		}
-
-		.info-primary-overlay:before{
-			content: '';
-			position: absolute;
-			background: $primary-overlay; 
-			top: 0;
-			right: -59px;
-			bottom: 0;
-			left: -49px;
-			z-index: 1; 
-		}
-	}
-	.info-card-text{
-		border: none !important; 
-		margin: 15rem 41rem;
-		opacity: 0.95; 
-		top: -27em;
-	}
 }
 
 
@@ -264,10 +128,11 @@ body{
 
 //FOOTER 
 footer{
-	font-family: 'Lato', sans-serif;
 	background: black;
+	font-family: 'Lato', sans-serif;
+	// margin-top: -32rem; 
 	.fa{
-		font-size: 1.3rem;
+		font-size: 1.4rem;
 		color: $lead-text; 
 	}
 	.footer-links1, .footer-links2{
@@ -285,16 +150,9 @@ footer{
 		}
 	}
 	.rights{
-		font-size: 13px; 
+		font-size: 0.8rem; 
 	}
 }
-
-//CONTACT
-
-// .contact{
-
-// }
-
 
 // HOVER EFFECTS
 // GROW

@@ -1,55 +1,3 @@
-* {
-  box-sizing: border-box; }
-
-html {
-  font-size: 1rem; }
-
-body {
-  background: #f8f9fa;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px; }
-
-.navbar {
-  background: transparent;
-  transition: background 500ms;
-  opacity: 0.9; }
-  .navbar a {
-    color: white;
-    letter-spacing: 1px; }
-    .navbar a:hover {
-      cursor: pointer; }
-  .navbar .nav-item a {
-    text-decoration: none;
-    color: white; }
-    .navbar .nav-item a:hover {
-      color: #f46a60 !important;
-      border-bottom: 1px solid #f46a60; }
-
-.showcase {
-  background-image: url("../images/home-bg.jpeg");
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  min-height: 45rem;
-  position: relative;
-  width: 100%; }
-  .showcase .primary-overlay {
-    align-content: center;
-    display: grid;
-    background: rgba(82, 75, 76, 0.3);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-  .showcase h1, .showcase .lead {
-    align-self: center;
-    font-family: "Alegreya Sans", sans-serif;
-    height: 100%;
-    letter-spacing: 1px;
-    margin: auto;
-    width: 60%; }
-
 .info-card .card, .info-card2 .card, .info-card3 .card, .info-card4 .card, .info-card5 .card {
   box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
   border: 1px solid #dc3545 !important;
@@ -123,7 +71,8 @@ body {
   margin: 60rem auto 0; }
 
 .info-card5 {
-  margin: 9rem auto 0; }
+  margin: 9rem auto 0;
+  height: 60rem; }
   .info-card5 .info-card-video {
     border: none !important;
     box-shadow: none;
@@ -154,6 +103,78 @@ body {
     opacity: 0.95;
     top: -27em; }
 
+.contactform {
+  background: rgba(82, 75, 76, 0.3); }
+  .contactform .active {
+    border-bottom: 1px solid #f46a60; }
+  .contactform .contact {
+    color: #dc3545;
+    height: 100%;
+    margin-top: 2rem;
+    min-height: 45rem; }
+    .contactform .contact input {
+      border-radius: 0.2rem !important; }
+    .contactform .contact .btn {
+      background-color: #dc3545;
+      color: #fff;
+      border-radius: 0%; }
+      .contactform .contact .btn:hover {
+        background-color: #fff;
+        color: #dc3545 !important;
+        border: 1px solid #dc3545; }
+
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 1rem; }
+
+body {
+  background: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px; }
+
+.navbar {
+  background: transparent;
+  transition: background 500ms;
+  opacity: 0.9; }
+  .navbar a {
+    color: white;
+    letter-spacing: 1px; }
+    .navbar a:hover {
+      cursor: pointer; }
+  .navbar .nav-item a {
+    text-decoration: none;
+    color: white; }
+    .navbar .nav-item a:hover {
+      color: #f46a60 !important;
+      border-bottom: 1px solid #f46a60; }
+
+.showcase {
+  background-image: url("../images/home-bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  min-height: 45rem;
+  height: 100%;
+  position: relative;
+  width: 100%; }
+  .showcase .primary-overlay {
+    align-content: center;
+    display: grid;
+    background: rgba(82, 75, 76, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  .showcase h1, .showcase .lead {
+    align-self: center;
+    font-family: "Alegreya Sans", sans-serif;
+    height: 100%;
+    letter-spacing: 1px;
+    margin: auto;
+    width: 60%; }
+
 .carousel {
   top: 49rem; }
   .carousel .slider {
@@ -181,10 +202,10 @@ body {
         max-width: 100%; }
 
 footer {
-  font-family: 'Lato', sans-serif;
-  background: black; }
+  background: black;
+  font-family: 'Lato', sans-serif; }
   footer .fa {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #dc3545; }
   footer .footer-links1 a, footer .footer-links2 a {
     text-decoration: none;
@@ -194,7 +215,7 @@ footer {
     padding-bottom: 3px;
     line-height: 2px; }
   footer .rights {
-    font-size: 13px; }
+    font-size: 0.8rem; }
 
 .hvr-grow {
   display: inline-block;
