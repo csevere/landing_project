@@ -1,0 +1,29 @@
+//CONTACT
+@import 'variables'; 
+
+.contactform{
+	.active{
+		border-bottom: 1px solid #f46a60; 
+	}
+	background: $primary-overlay;
+	.contact{ 
+		color: $lead-text; 
+		height: 100%;
+		margin-top: 2rem; 
+		min-height: 45rem;
+		input{
+				border-radius: 0.2rem !important; 
+		}
+		.btn{
+				background-color: $lead-bg;
+				color: #fff; 
+				border-radius: 0%; 
+				&:hover{
+						background-color: #fff;
+						color: $lead-text !important;
+						border: 1px solid $border;   
+				}
+		}
+	}
+
+}
