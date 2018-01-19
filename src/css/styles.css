@@ -49,15 +49,16 @@ body {
     margin: auto;
     width: 60%; }
 
-.info-card .card, .info-card2 .card, .info-card3 .card, .info-card4 .card {
+.info-card .card, .info-card2 .card, .info-card3 .card, .info-card4 .card, .info-card5 .card {
   box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
   border: 1px solid #dc3545 !important;
   border-radius: 0;
-  margin: -60px auto 30px; }
-  .info-card .card .card-title, .info-card2 .card .card-title, .info-card3 .card .card-title, .info-card4 .card .card-title {
+  margin: -60px auto 30px;
+  opacity: 0.95; }
+  .info-card .card .card-title, .info-card2 .card .card-title, .info-card3 .card .card-title, .info-card4 .card .card-title, .info-card5 .card .card-title {
     font-family: "Alegreya Sans", sans-serif;
     color: #dc3545; }
-  .info-card .card .btn, .info-card2 .card .btn, .info-card3 .card .btn, .info-card4 .card .btn {
+  .info-card .card .btn, .info-card2 .card .btn, .info-card3 .card .btn, .info-card4 .card .btn, .info-card5 .card .btn {
     background-color: #dc3545;
     border-radius: 0; }
 
@@ -72,7 +73,9 @@ body {
       position: absolute;
       z-index: 0; }
   .info-card2 .info-card-text {
+    border: none !important;
     margin: 33rem 37rem 0;
+    opacity: 0.95;
     position: absolute;
     z-index: 2; }
 
@@ -88,12 +91,39 @@ body {
       position: absolute;
       z-index: 0; }
   .info-card3 .info-card-text {
+    border: none !important;
+    opacity: 0.95;
     position: absolute;
     margin: 23rem 6rem 0;
     z-index: 2; }
 
 .info-card4 {
-  margin: 60rem auto 30px; }
+  margin: 60rem auto 0; }
+
+.info-card5 {
+  margin: 9rem auto 0; }
+  .info-card5 .info-card-video {
+    width: 100%;
+    box-shadow: none; }
+    .info-card5 .info-card-video .info-primary-overlay {
+      position: relative;
+      width: 500px;
+      margin: 0 auto;
+      padding: 3rem;
+      align-content: center;
+      background: #f8f9fa;
+      border: 0px solid #dc3545;
+      display: grid;
+      width: 100%;
+      height: 100%; }
+      .info-card5 .info-card-video .info-primary-overlay video {
+        width: 110%;
+        box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27); }
+  .info-card5 .info-card-text {
+    border: none !important;
+    margin: 15rem 41rem;
+    opacity: 0.95;
+    top: -27em; }
 
 .carousel {
   top: 49rem; }

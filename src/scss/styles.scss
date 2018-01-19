@@ -89,12 +89,13 @@ body{
 
 
 //INFO CARDS
-.info-card, .info-card2, .info-card3, .info-card4{
+.info-card, .info-card2, .info-card3, .info-card4, .info-card5{
 	.card{
 		box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
 		border: 1px solid $border !important;
 		border-radius: 0; 
 		margin: -60px auto 30px;
+		opacity: 0.95; 
 		.card-title{
 			font-family: $title-font;
 			color: $lead-text;  
@@ -119,7 +120,9 @@ body{
 		}	
 	}
 	.info-card-text{
+		border: none !important; 
 		margin: 33rem 37rem 0;
+		opacity: 0.95; 
 		position: absolute; 
 		z-index: 2; 
 	}
@@ -141,6 +144,8 @@ body{
 		}	
 	}
 	.info-card-text {
+		border: none !important; 
+		opacity: 0.95; 
 		position: absolute;
 		margin: 23rem 6rem 0;
 		z-index: 2;  
@@ -148,7 +153,37 @@ body{
 }
 
 .info-card4{
-	margin: 60rem auto 30px;
+	margin: 60rem auto 0;
+}
+
+.info-card5{
+	margin: 9rem auto 0;
+	.info-card-video{
+		width: 100%;
+		box-shadow: none; 
+		.info-primary-overlay{
+			position: relative;
+			width: 500px;
+			margin: 0 auto;
+			padding: 3rem;
+			align-content: center;
+			background: $background; 
+			border: 0px solid $lead-text; 	
+			display: grid; 
+			width: 100%;
+			height: 100%; 
+			video{
+				width: 110%;
+				box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
+			}
+		}
+	}
+	.info-card-text{
+		border: none !important; 
+		margin: 15rem 41rem;
+		opacity: 0.95; 
+		top: -27em;
+	}
 }
 
 
@@ -217,33 +252,7 @@ footer{
 	}
 }
 
-// .carousel{
-// 	margin:0 auto;
-// 	max-width: 1024px;
-// 	position: relative;
 
-// 	.slider{
-// 		.slider-image{
-// 			align-items: center;
-// 			box-sizing: border-box;
-// 			display: flex;
-// 			justify-content: center;
-// 			padding: 10px;
-// 			width: 924px;
-// 			transition: all 300ms ease;
-// 			opacity: .5;
-// 			img{
-// 				align-items: center; 
-// 				box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-// 				display: block; 
-// 				max-width: 100%;
-// 				max-height: 100%;
-// 				padding: 1rem;
-				
-// 			}
-// 		}	
-// 	} 	
-// }
 
 
 
