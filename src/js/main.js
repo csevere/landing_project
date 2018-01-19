@@ -42,26 +42,20 @@ $(document).ready(function(){
 		]
 	});
 
-	// VIDEO
-
-// 	// Get the video
-// var video = document.getElementById("myVideo");
-
-// // Get the button
-// var btn = document.getElementById("myBtn");
-
-// // Pause and play the video, and change the button text
-// function myFunction() {
-//     if (video.paused) {
-//         video.play();
-//         btn.innerHTML = "Pause";
-//     } else {
-//         video.pause();
-//         btn.innerHTML = "Play";
-//     }
-// }
-
-
+ //CHANGE NAVBAR SCROLL
+  $(window).scroll(function(){
+  	var scroll = $(window).scrollTop();
+	  if (scroll > 300) {
+			$('.navbar').css({'background-color': '#f8f9fa', 'box-shadow': '2px 2px 5px #dc3545'});
+			$('.navbar a').css({'color': '#dc3545'});
+			$('.nav-item a').css({'color': '#dc3545'});
+	  }
+	  else{
+			$(".navbar").css({'background' :'transparent', 'box-shadow': 'none'}); 
+			$('.navbar a').css({'color': '#fff'});
+			$('.nav-item a').css({'color': '#fff'}); 	
+	  }
+  })
 
 });
 
