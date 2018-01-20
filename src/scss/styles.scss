@@ -15,31 +15,47 @@
 // }
 
 *{  
-	background-color: rgba(0,255,0,0.1); 
+	// background-color: rgba(0,255,0,0.1); 
 	box-sizing: border-box;
+	// overflow-x: hidden; 
     
 }
 
 html{
 	font-size: 1rem;
+	@media (max-width:$mobile){
+     font-size: 0.9em; 
+	}
+	
 }
 
 body{
 	background: $background; 
+	display: flex;
 	font-family: $lead-font; 
-	font-size: 16px;
-	// margin-top: 105px;
-	border:5px solid cyan; 
+	flex-direction: column;
+	// border:5px solid cyan; 
 }
 
 //NAVBAR
 .navbar{
-	border: 5px solid pink; 
+	// border: 5px solid pink; 
 	// box-shadow: 2px 2px 5px $border; 
 	// background: $background;
 	background: transparent; 
 	transition: background 500ms;
 	opacity: 0.9; 
+
+	.navbar-toggler {
+    background:transparent;
+    border: 1px solid $border;
+		border-radius: 0.15rem;
+		.icon{
+			font-size: 1.5rem;
+		}
+	}
+	
+	
 	a{
 		color: white; 
 		// color:$lead-text !important;
@@ -64,7 +80,6 @@ body{
 
 //HERO IMAGE
 .showcase{
-	border: 5px solid red; 
   background-image: url('../images/home-bg.jpeg'); 
   background-position: center; 
 	background-size: cover; 
@@ -92,6 +107,12 @@ body{
 		.display{
 			margin-top: 15rem; 
 
+			h1{
+				@media (max-width:$mobile){
+					font-size: 2.5rem; 
+				}
+			}
+
 			h1,.lead{
 				align-self: center;
 				font-family: $title-font;
@@ -109,10 +130,18 @@ body{
 
 //CAROUSEL
 .carousel{
-	top: 49rem;
+	height: 100%;
+	min-height: 45rem;
+	@media (max-width:$mdtablet){
+		min-height: 0; 
+		width: 100% !important; 
+	}
 	.slider{
 		margin: 0 auto; 
 		width: 80%;
+		@media (max-width:$mobile){
+			width: 100%; 
+		}
 		.fa-arrow-circle-right{
 			right:-60px;
 		}
@@ -127,15 +156,27 @@ body{
 			display: block; 
 			transform: translate(0, -50%); 
 			cursor: pointer;
+			@media (max-width:$mdtablet){
+				display: none !important; 
+			}
 		}
 		.slider-image{
 			max-width: 100%; 
 			img{
 				align-items: center; 
+				display: block; 
 				pointer-events: visible; 
 				cursor: pointer;
-				max-height: 100%;
-				max-width: 100%; 
+				border-radius: 0; 
+				margin: auto; 
+				min-height: 40rem; 
+				position: relative; 
+				width: 80%; 
+				z-index: 0;
+				@media (max-width:$mdtablet){
+					width: 100%; 
+					min-height: 17rem; 
+				}
 			}
 		}
 	}

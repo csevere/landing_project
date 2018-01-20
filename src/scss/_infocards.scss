@@ -6,15 +6,29 @@
 		box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
 		border: 1px solid $border !important;
 		border-radius: 0; 
-		margin: -60px auto 30px;
-		opacity: 0.95; 
+		// margin: -60px auto 30px;
+		opacity: 0.95;
+		@media (max-width:$mdtablet){
+			margin: 0 auto; 
+			width: 100% !important;
+			padding: 1.5rem !important; 
+			box-shadow: none;  
+		} 
 		.card-title{
 			font-family: $title-font;
 			color: $lead-text;  
+			h1{
+				@media (max-width:$mdtablet){
+					font-size:2rem; 
+				} 
+			}
 		} 
 		.btn{
 			background-color: $lead-bg; 
 			border-radius: 0; 
+			@media (max-width:$mdtablet){
+				margin: 1em; 
+			} 
 			&:hover{
 				background-color: #fff;
 				color: $lead-text !important;
@@ -24,83 +38,184 @@
 	}
 }
 
+.info-card{
+	max-width: 95rem;
+	.card{
+		margin: -162px auto 30px;
+	}
+}
+
+//INFOCARD2 WITH IMAGE: 
 .info-card2{
 	position: relative; 
+	@media (max-width:$mdtablet){
+		padding-top: 0 !important;
+		padding-bottom: 0 !important; 
+		min-height: 0; 
+	} 
 	&:hover{
 		animation-name: cardmove;
-		animation-duration: 5s;
+		animation-duration: 8s;
+		animation-direction: alternate;
 		@keyframes cardmove {
-			from {left: 0px;}
-			to {left: 100px;}
+			0%   {left: 0px;}
+			25%  {left: 90px;}
+			50%  {left: 90px;}
+			75%  {left: 0px;}
+			100% {left: 0px;}
 		}
+		@media (max-width:$mdtablet){
+			animation-duration: 0s; 
+		} 
 	}
 	.info-card-image2{
 		border: none !important; 
 		margin: 1rem auto 0;
+		@media (max-width:$mdtablet){
+			margin: 0 auto; 
+			position: static; 
+			min-height: 0; 
+			padding: 0 !important; 
+		} 
 		img{
 			border-radius: 0; 
 			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-			position: absolute; 
+			display: block; 
+			min-height: 40rem; 
+			position: relative; 
+			width: 100%; 
 			z-index: 0; 
+			@media (max-width:$mdtablet){
+				box-shadow: none;
+				position: static; 
+				width: 100%;
+				min-height: 0;  
+			} 
 		}	
 	}
+	//INFOTEXT2
 	.info-card-text{
-		border: none !important; 
-		margin: 33rem 37rem 0;
+		bottom: 0rem; 
+		left: 18rem; 
+		max-width: 35rem; 
 		opacity: 0.95; 
 		position: absolute; 
-		z-index: 2; 
+		z-index: 2;
+		@media (max-width:$mdtablet){
+			margin: 0 auto; 
+			max-width: none; 
+			width: 100% !important;
+			padding: 1.5em !important; 
+			position: static;  
+		} 
 	}
 }
 
 
+
+
+//INFOCARD 3
 .info-card3{
 	position: relative;
+	height: 100%;
+	min-height: 50rem; 
+	@media (max-width:$mdtablet){
+		padding-top: 0 !important;
+		padding-bottom: 0 !important; 
+		min-height: 0; 
+	} 
 	&:hover{
 		animation-name: cardmove2;
-		animation-duration: 5s;
+		animation-duration: 8s;
+		animation-direction: alternate;
 		@keyframes cardmove2 {
-			from {right: 0px;}
-			to {right: 90px;}
+			0%   {right: 0px;}
+			25%  {right: 90px;}
+			50%  {right: 90px;}
+			75%  {right: 0px;}
+			100% {right: 0px;}
 		}
 	}
 	.info-card-image3{
 		border: none !important;
-		margin: 50rem auto 0;  
-		// position: relative; 
+		margin: 4rem auto 0;  
+		height: 100%;
+		@media (max-width:$mdtablet){
+			margin: 0 auto; 
+			position: static; 
+			min-height: 0; 
+			padding: 0 !important; 
+		} 
 		img{
 			border-radius: 0; 
 			box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-			position: absolute; 
+			display: block; 
+			min-height: 40rem; 
+			position: relative; 
+			width: 100%; 
 			z-index: 0; 
+			@media (max-width:$mdtablet){
+				box-shadow: none;
+    		position: static;
+    		width: 100%;
+    		min-height: 17rem;
+    		height: 100%; 
+			} 
 		}	
 	}
+	//INFOTEXT3
 	.info-card-text {
 		border: none !important; 
-		opacity: 0.95; 
-		position: absolute;
-		margin: 23rem 6rem 0;
-		z-index: 2;  
+		bottom: 0; 
+    left: 19rem;
+		max-width: 35rem; 
+		opacity: 0.9; 
+		position: absolute; 
+		z-index: 2;
+		@media (max-width:$mdtablet){
+			margin: 0 auto; 
+			max-width: none; 
+			width: 100% !important;
+			padding: 1.5em !important; 
+			position: static;  
+		}  
 	} 
 }
 
 .info-card4{
-	margin: 60rem auto 0;
+	max-width: 85rem;
+	margin: 0 auto;  
+	.card{
+		margin: 0 auto; 
+	}
+	@media (max-width:$mdtablet){
+		box-shadow: none;
+		position: static; 
+		width: 100%; 
+	} 
 }
 
+//VIDEO CARD
+
 .info-card5{
-	margin: 9rem auto 0;
-	height: 60rem;
+	min-height: 65rem;
+	height: 100%;
+	@media (max-width:$mdtablet){
+		margin: 0 auto;
+		padding-bottom:0 !important;
+		padding-top: 0 !important;  
+	} 
 
 	.info-card-video{
 		border: none !important; 
 		box-shadow: none; 
 		width: 100%;
+		margin: 0 auto; 
 		
 		.info-primary-overlay{
 			align-content: center;
 			border: none !important; 
-			display: grid;
+			// display: grid;
 			// height: 100%; 
 			// margin: 0 auto;
 			// position: relative;
@@ -111,9 +226,12 @@
 			video{
 				border:none; 
 				box-shadow: -25px 12px 46px 0 rgba(0,0,0,0.27);
-				margin-left: -3em; 
+				margin: 0 auto; 
 				z-index: 0; 
-				width: 110%;
+				width: 100%;
+				@media (max-width:$mdtablet){
+					box-shadow: none;
+				} 
 			}
 		}
 
@@ -122,16 +240,29 @@
 			position: absolute;
 			background: $primary-overlay; 
 			top: 0;
-			right: -59px;
-			bottom: 0;
-			left: -49px;
+			right: 0;
+			bottom: 6px;
+			left: 0;
 			z-index: 1; 
+			@media (max-width:$mdtablet){
+				top: 20px;
+    		right: 20px;
+    		bottom: 26px;
+    		left: 22px; 
+			} 
 		}
 	}
 	.info-card-text{
-		border: none !important; 
-		margin: 15rem 41rem;
-		opacity: 0.95; 
-		top: -27em;
+		max-width: 35rem;
+		margin: 0 auto; 
+		border: none !important;
+		top: -7rem; 
+		@media (max-width:$mdtablet){
+			max-width: none;
+			top: 0rem; 
+			margin: 0 auto;
+			padding-bottom:0 !important;
+			padding-top: 0 !important;  
+		} 
 	}
 }
