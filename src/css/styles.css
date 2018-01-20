@@ -1,108 +1,3 @@
-.info-card .card, .info-card2 .card, .info-card3 .card, .info-card4 .card, .info-card5 .card {
-  box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
-  border: 1px solid #dc3545 !important;
-  border-radius: 0;
-  margin: -60px auto 30px;
-  opacity: 0.95; }
-  .info-card .card .card-title, .info-card2 .card .card-title, .info-card3 .card .card-title, .info-card4 .card .card-title, .info-card5 .card .card-title {
-    font-family: "Alegreya Sans", sans-serif;
-    color: #dc3545; }
-  .info-card .card .btn, .info-card2 .card .btn, .info-card3 .card .btn, .info-card4 .card .btn, .info-card5 .card .btn {
-    background-color: #dc3545;
-    border-radius: 0; }
-    .info-card .card .btn:hover, .info-card2 .card .btn:hover, .info-card3 .card .btn:hover, .info-card4 .card .btn:hover, .info-card5 .card .btn:hover {
-      background-color: #fff;
-      color: #dc3545 !important;
-      border: 1px solid #dc3545; }
-
-.info-card2 {
-  position: relative; }
-  .info-card2:hover {
-    animation-name: cardmove;
-    animation-duration: 5s; }
-
-@keyframes cardmove {
-  from {
-    left: 0px; }
-  to {
-    left: 100px; } }
-  .info-card2 .info-card-image2 {
-    border: none !important;
-    margin: 1rem auto 0; }
-    .info-card2 .info-card-image2 img {
-      border-radius: 0;
-      box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
-      position: absolute;
-      z-index: 0; }
-  .info-card2 .info-card-text {
-    border: none !important;
-    margin: 33rem 37rem 0;
-    opacity: 0.95;
-    position: absolute;
-    z-index: 2; }
-
-.info-card3 {
-  position: relative; }
-  .info-card3:hover {
-    animation-name: cardmove2;
-    animation-duration: 5s; }
-
-@keyframes cardmove2 {
-  from {
-    right: 0px; }
-  to {
-    right: 90px; } }
-  .info-card3 .info-card-image3 {
-    border: none !important;
-    margin: 50rem auto 0; }
-    .info-card3 .info-card-image3 img {
-      border-radius: 0;
-      box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
-      position: absolute;
-      z-index: 0; }
-  .info-card3 .info-card-text {
-    border: none !important;
-    opacity: 0.95;
-    position: absolute;
-    margin: 23rem 6rem 0;
-    z-index: 2; }
-
-.info-card4 {
-  margin: 60rem auto 0; }
-
-.info-card5 {
-  margin: 9rem auto 0;
-  height: 60rem; }
-  .info-card5 .info-card-video {
-    border: none !important;
-    box-shadow: none;
-    width: 100%; }
-    .info-card5 .info-card-video .info-primary-overlay {
-      align-content: center;
-      border: none !important;
-      display: grid;
-      z-index: 1; }
-      .info-card5 .info-card-video .info-primary-overlay video {
-        border: none;
-        box-shadow: -25px 12px 46px 0 rgba(0, 0, 0, 0.27);
-        margin-left: -3em;
-        z-index: 0;
-        width: 110%; }
-    .info-card5 .info-card-video .info-primary-overlay:before {
-      content: '';
-      position: absolute;
-      background: rgba(82, 75, 76, 0.3);
-      top: 0;
-      right: -59px;
-      bottom: 0;
-      left: -49px;
-      z-index: 1; }
-  .info-card5 .info-card-text {
-    border: none !important;
-    margin: 15rem 41rem;
-    opacity: 0.95;
-    top: -27em; }
-
 .contactform {
   background: rgba(82, 75, 76, 0.3); }
   .contactform .active {
@@ -124,6 +19,7 @@
         border: 1px solid #dc3545; }
 
 * {
+  background-color: rgba(0, 255, 0, 0.1);
   box-sizing: border-box; }
 
 html {
@@ -132,9 +28,11 @@ html {
 body {
   background: #f8f9fa;
   font-family: "Poppins", sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  border: 5px solid cyan; }
 
 .navbar {
+  border: 5px solid pink;
   background: transparent;
   transition: background 500ms;
   opacity: 0.9; }
@@ -151,29 +49,33 @@ body {
       border-bottom: 1px solid #f46a60; }
 
 .showcase {
+  border: 5px solid red;
   background-image: url("../images/home-bg.jpeg");
   background-position: center;
   background-size: cover;
   min-height: 45rem;
-  height: 100%;
   position: relative;
-  width: 100%; }
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0; }
   .showcase .primary-overlay {
     align-content: center;
-    display: grid;
     background: rgba(82, 75, 76, 0.3);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-  .showcase h1, .showcase .lead {
-    align-self: center;
-    font-family: "Alegreya Sans", sans-serif;
-    height: 100%;
-    letter-spacing: 1px;
-    margin: auto;
-    width: 60%; }
+  .showcase .display {
+    margin-top: 15rem; }
+    .showcase .display h1, .showcase .display .lead {
+      align-self: center;
+      font-family: "Alegreya Sans", sans-serif;
+      height: 65%;
+      letter-spacing: 1px;
+      margin: auto;
+      width: 100%; }
 
 .carousel {
   top: 49rem; }
