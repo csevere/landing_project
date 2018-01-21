@@ -42,13 +42,13 @@
 					// mail("carla.severe@gmail.com", "Guest Info", $firstname, $lastname, $zipcode, $state, $message); 
 
 					$fnamerror = 'Name must contain letters only. Please click Contact from menu and try again.';
-					// $fnamerror2 = 'Please enter a first name.';
+					$fnamerror2 = 'Please enter a first name.';
 					$lnamerror = 'Please enter a valid last name. Please click Contact from menu and try again.';
-					// $lnamerror2 = 'Please enter a last name.';
+					$lnamerror2 = 'Please enter a last name.';
 					$emailerror = 'Please enter a valid email address.';
 					$ziperror = 'Please enter a valid zipcode.';
-					// $ziprror2 = 'Please enter a zipcode';
-					// $messerror = 'Please write a message';
+					$ziprror2 = 'Please enter a zipcode';
+					$messerror = 'Please write a message';
 					$messerror2 = 'Message is too long';	
 
 					//form validation and redirecting to home page upon successful submission 
@@ -132,7 +132,7 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="text" class="form-control" placeholder="First Name" name="firstname" required="required">
+                  <input type="text" class="form-control" placeholder="First Name" name="firstname">
 									<div style = "color:red;">
 										<?php 
 											if(isset($firstname)){
@@ -150,12 +150,15 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="text" class="form-control" placeholder="Last Name" name="lastname" required="required">
+                  <input type="text" class="form-control" placeholder="Last Name" name="lastname">
 									<div style="color:red;">
 										<?php 
 											if(isset($lastname)){
-												if(!preg_match('/^([a-zA-Z]+[\'-]?[a-zA-Z]+[ ]?)+$/', $lastname)){
+												if(!preg_match('/^([a-zA-Z]+[\'-]?[a-zA-Z]+[ ]?)+$/', $lastname) && $lastname != ''){
 													echo $lnamerror;
+												}
+												if ($lastname == '') {
+													echo $lnamerror2; 
 												}
 											}
 										?>
@@ -165,7 +168,7 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="email" class="form-control" placeholder="Email" name="email" required="required">
+                  <input type="email" class="form-control" placeholder="Email" name="email">
 									<div style="color:red;">
 										<?php 
 											if (isset($email)) {
@@ -183,7 +186,7 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="text" class="form-control" placeholder="Zipcode" name="zipcode" required="required">
+                  <input type="text" class="form-control" placeholder="Zipcode" name="zipcode">
 									<div style="color:red;">
 											<?php
 													if(isset($zipcode)){
@@ -262,12 +265,15 @@
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
 									<input type="hidden">
-                  <textarea class="form-control" placeholder="Please write your message here..." rows = "5" name="message" required="required"></textarea>
+                  <textarea class="form-control" placeholder="Please write your message here..." rows = "5" name="message"></textarea>
 									<div style="color:red;">
 										<?php 
 											if(isset($message)){
+												if($message == ''){
+													echo $messerror; 
+												}
 												if (strlen($message) > 280){
-													echo $messrror2; 
+													echo $messerror2; 
 												}
 											}
 										?>
