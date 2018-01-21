@@ -41,14 +41,14 @@
 
 					// mail("carla.severe@gmail.com", "Guest Info", $firstname, $lastname, $zipcode, $state, $message); 
 
-					$fnamerror = 'Name must contain letters only.';
-					$fnamerror2 = 'Please enter a first name.';
-					$lnamerror = 'Please enter a valid last name';
-					$lnamerror2 = 'Please enter a last name.';
+					$fnamerror = 'Name must contain letters only. Please click Contact from menu and try again.';
+					// $fnamerror2 = 'Please enter a first name.';
+					$lnamerror = 'Please enter a valid last name. Please click Contact from menu and try again.';
+					// $lnamerror2 = 'Please enter a last name.';
 					$emailerror = 'Please enter a valid email address.';
 					$ziperror = 'Please enter a valid zipcode.';
-					$ziprror2 = 'Please enter a zipcode';
-					$messerror = 'Please write a message';
+					// $ziprror2 = 'Please enter a zipcode';
+					// $messerror = 'Please write a message';
 					$messerror2 = 'Message is too long';	
 
 					//form validation and redirecting to home page upon successful submission 
@@ -89,6 +89,7 @@
 			}	
 
 		?>
+
 		<nav class="navbar navbar-expand-md">
 			<div class="container">
 					<img src="./images/logo.png" width = "50" height = "50" alt="">
@@ -127,21 +128,21 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum tenetur dolores 
             </p>
 					
-            <form action="" method="POST" on="window.location.assign('index.php')">
+            <form action="" method="POST">
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="text" class="form-control" placeholder="First Name" name="firstname">
+                  <input type="text" class="form-control" placeholder="First Name" name="firstname" required="required">
 									<div style = "color:red;">
 										<?php 
-										if(isset($firstname)){
-											if (ctype_alpha($firstname) === false && $firstname !='') {
-												echo  $fnamerror;
+											if(isset($firstname)){
+												if (ctype_alpha($firstname) === false && $firstname !='') {
+													echo  $fnamerror;
+												}
+												if ($firstname == '') {
+													echo $fnamerror2; 
+												}
 											}
-											if ($firstname === '') {
-												echo $fnamerror2; 
-											}
-										}
 										?>
 									</div>
                 </div>
@@ -149,15 +150,12 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+                  <input type="text" class="form-control" placeholder="Last Name" name="lastname" required="required">
 									<div style="color:red;">
 										<?php 
 											if(isset($lastname)){
-												if (ctype_alpha($lastname) === false && $lastname !='') {
+												if(!preg_match('/^([a-zA-Z]+[\'-]?[a-zA-Z]+[ ]?)+$/', $lastname)){
 													echo $lnamerror;
-												}
-												if ($lastname === '') {
-													echo $lnamerror2;
 												}
 											}
 										?>
@@ -167,7 +165,7 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="email" class="form-control" placeholder="Email" name="email">
+                  <input type="email" class="form-control" placeholder="Email" name="email" required="required">
 									<div style="color:red;">
 										<?php 
 											if (isset($email)) {
@@ -185,7 +183,7 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <input type="text" class="form-control" placeholder="Zipcode" name="zipcode">
+                  <input type="text" class="form-control" placeholder="Zipcode" name="zipcode" required="required">
 									<div style="color:red;">
 											<?php
 													if(isset($zipcode)){
@@ -201,8 +199,8 @@
               </div>
 
 							<div class="form-group">
-								<div class="input-group input-group-lg">
-									<input type="hidden" value="2" />
+								<div class="input-group-lg">
+									<input type="hidden" value="2">
 									<select id="inputState" class="form-control" name="state">
 										<option selected>Choose State...</option>
 										<option value="AL">Alabama</option>
@@ -263,13 +261,11 @@
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
-                  <textarea class="form-control" placeholder="Please write your message here..." rows = "5" name="message"></textarea>
+									<input type="hidden">
+                  <textarea class="form-control" placeholder="Please write your message here..." rows = "5" name="message" required="required"></textarea>
 									<div style="color:red;">
 										<?php 
 											if(isset($message)){
-												if($message === ''){
-													echo $messerror; 
-												}
 												if (strlen($message) > 280){
 													echo $messrror2; 
 												}
