@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "bootstrap": "4.0.0-beta",
+    "composer": "^0.14.2",
     "font-awesome": "^4.7.0",
     "gulp-cssnano": "^2.1.2",
     "hover.css": "^2.2.1",
