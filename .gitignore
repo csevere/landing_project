@@ -1,3 +1,2 @@
 config.php
 
-// $conn = new PDO('mysql:host=localhost; dbname=contacts', 'root', 'root4763');
