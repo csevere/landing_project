@@ -16,28 +16,146 @@
 	</head>
 
 	<body class="contactform">
+		<?php
+
+			$configs = include('config.php');
+			echo json_encode($configs->pass);
+			$host = $configs->host;  
+			$pass = $configs->pass;  
+			$user = $configs->user;  
+			$dbname = $configs->dbname; 
+			
+			// echo $host;
+			// echo $pass;
+			// echo $user;
+			// echo $dbname; 
+
+			try {
+				$conn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
+				 echo "connected"; 
+				// $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				// echo "connected"; 
+				if(isset($_POST['submit'])){
+					$firstname = $_POST['firstname'];
+					$lastname = $_POST['lastname'];
+					$email = $_POST['email'];
+					$zipcode = $_POST['zipcode'];
+					$state = $_POST['state'];
+					$message = $_POST['message'];
+
+					// mail("carla.severe@gmail.com", "Guest Info", $firstname, $lastname, $zipcode, $state, $message); 
+
+					$fnamerror = 'Name must contain letters only.';
+					$fnamerror2 = 'Please enter a first name.';
+					$laamerror = 'Please enter a valid last name';
+					$laamerror2 = 'Please enter a last name.';
+					$emailerror = 'Please enter a valid email address.';
+					$ziperror = 'Please enter a valid zipcode.';
+					$ziprror2 = 'Please enter a zipcode';
+					$messerror = 'Please write a message';
+					$messerror2 = 'Message is too long';
+
+					// if(isset($firstname)){
+					// 	if (ctype_alpha($firstname) === false && $firstname !='') {
+					// 		echo '<div style="color:red;">' . $fnamerror . '</div>';
+					// 	}
+					// 	if ($firstname === '') {
+					// 		echo '<div style="display:none;">' . $fnamerror2 . '</div>'; 
+					// 	}
+					// }
+
+
+					// if(isset($lastname)){
+					// 	if (ctype_alpha($lastname) === false && $lastname !='') {
+					// 		echo $laamerror;
+					// 	}
+					// 	if ($lastname === '') {
+					// 		echo $laamerror2;
+					// 	}
+					// }
+					
+				 
+				// if (isset($email)) {
+				// 	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+				// 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+				// 			echo ''; 
+				// 	} else {
+				// 			echo  $emailerror;
+				// 	}
+				// }
+
+				// if(isset($zipcode)){
+				// 	if (preg_match('#[0-9]{5}#', $zipcode) && $zipcode !='')
+				// 		return true;
+				// 	else
+				// 		echo $ziperror;
+				// 	if($zipcode === ''){
+				// 		echo 	$ziprror2; 
+				// 	}
+				// }
+
+				// if(isset($message)){
+				// 	if($message === ''){
+				// 		echo $messerror; 
+				// 	}
+				// 	if (strlen($message) > 280){
+				// 		echo $messrror2; 
+				// 	}
+				// }
+					
+
+					$insert = $conn->prepare('INSERT INTO guests (firstname, lastname, email, zipcode, state, message)
+						values(:firstname,:lastname,:email,:zipcode,:state,:message)');
+
+					$insert->bindParam(':firstname',$firstname);
+					$insert->bindParam(':lastname',$lastname);
+					$insert->bindParam(':email',$email);
+					$insert->bindParam(':zipcode',$zipcode);
+					$insert->bindParam(':state',$state);
+					$insert->bindParam(':message',$message);
+
+					$insert->execute();
+					// echo "submitted form"; 
+					// echo 	$firstname; 
+					// echo 	$state;
+				}
+			}
+
+			catch(PDOException $e){
+				echo "error" . $e->getMessage(); 
+			}
+		
+
+			// Cl1Ru6yIpUXPgE2j
+		
+		
+		
+		
+		?>
+
+
 
 		<nav class="navbar navbar-expand-md">
 			<div class="container">
-					<img src="../images/logo.png" width = "50" height = "50" alt="">
+					<img src="./images/logo.png" width = "50" height = "50" alt="">
 				<a href="index.html" class="navbar-brand">Phantom Reality</a>
 				<button class="navbar-toggler" data-toggle="collapse" data-target="#navNavbar"><span class="icon"><i class="fa fa-bars" aria-hidden="true"></i></span></button>
 				<div class="collapse navbar-collapse" id="navNavbar">
 					<ul class="navbar-nav ml-auto">
 							<li class="nav-item">
-								<a href="index.html#about" class="nav-link">About</a>
+								<a href="index.php#about" class="nav-link">About</a>
 							</li>
 							<li class="nav-item">
-								<a href="index.html#products" class="nav-link">Products</a>
+								<a href="index.php#products" class="nav-link">Products</a>
 							</li>
 								<li class="nav-item">
-									<a href="index.html#news" class="nav-link">News</a>
+									<a href="index.php#news" class="nav-link">News</a>
 								</li>
 							<li class="nav-item">
-								<a href="index.html#careers" class="nav-link">Careers</a>
+								<a href="index.php#careers" class="nav-link">Careers</a>
 							</li>
 							<li class="nav-item active">
-								<a href="contact.html" class="nav-link">Contact</a>
+								<a href="contact.php" class="nav-link">Contact</a>
 							</li>
 						</ul>
 				</div>
@@ -54,35 +172,82 @@
             <p class="lead text-dark">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum tenetur dolores 
             </p>
-            <form action="">
+					
+            <form action="contact.php" method="POST">
 
               <div class="form-group">
-                <div class="input-group input-group-lg">
-                  <input type="text" class="form-control" placeholder="First Name">
+                <div class="input-group-lg d-flex flex-column">
+                  <input type="text" class="form-control" placeholder="First Name" name="firstname">
+									<div style = "color:red;">
+										<?php 
+										if(isset($firstname)){
+											if (ctype_alpha($firstname) === false && $firstname !='') {
+												echo  $fnamerror;
+											}
+											if ($firstname === '') {
+												echo $fnamerror2; 
+											}
+										}
+										?>
+									</div>
                 </div>
               </div>
 
               <div class="form-group">
-                <div class="input-group input-group-lg">
-                  <input type="text" class="form-control" placeholder="Last Name">
+                <div class="input-group-lg d-flex flex-column">
+                  <input type="text" class="form-control" placeholder="Last Name" name="lastname">
+									<div style="color:red;">
+										<?php 
+											if(isset($lastname)){
+												if (ctype_alpha($lastname) === false && $lastname !='') {
+													echo $laamerror;
+												}
+												if ($lastname === '') {
+													echo $laamerror2;
+												}
+											}
+										?>
+									</div>
                 </div>
               </div>
 
               <div class="form-group">
-                <div class="input-group input-group-lg">
-                  <input type="email" class="form-control" placeholder="Email">
+                <div class="input-group-lg d-flex flex-column">
+                  <input type="email" class="form-control" placeholder="Email" name="email">
+									<div style="color:red;">
+										<?php 
+											if (isset($email)) {
+												$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+												if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+														echo ''; 
+												} else {
+														echo  $emailerror;
+												}
+											}
+										?>
+									</div>
                 </div>
               </div>
 
               <div class="form-group">
-                <div class="input-group input-group-lg">
-                  <input type="text" class="form-control" placeholder="Zipcode">
+                <div class="input-group-lg d-flex flex-column">
+                  <input type="text" class="form-control" placeholder="Zipcode" name="zipcode">
+									<div style="color:red;">
+											<?php
+													if(isset($zipcode)){
+														if (preg_match('#[0-9]{5}#', $zipcode)|| $zipcode ='')
+															return true;
+														else
+															echo $ziperror;
+													}
+											?>
+									</div>
                 </div>
               </div>
 
 							<div class="form-group">
 								<div class="input-group input-group-lg">
-									<select id="inputState" class="form-control">
+									<select id="inputState" class="form-control" name="state">
 										<option selected>Choose State...</option>
 										<option value="AL">Alabama</option>
 										<option value="AK">Alaska</option>
@@ -140,17 +305,27 @@
 							</div>
 
               <div class="form-group">
-                <div class="input-group input-group-lg">
-                  <textarea class="form-control" placeholder="Please write your message here..." rows = "5"></textarea>
+                <div class="input-group-lg d-flex flex-column">
+                  <textarea class="form-control" placeholder="Please write your message here..." rows = "5" name="message"></textarea>
+									<div style="color:red;">
+										<?php 
+											if(isset($message)){
+												if($message === ''){
+													echo $messerror; 
+												}
+												if (strlen($message) > 280){
+													echo $messrror2; 
+												}
+											}
+										?>
+									</div>
                 </div>
               </div>
-
-              <input type="submit" value = "Submit" class="btn btn-block btn-lg">
+              <input type="submit" name ="submit" value="Submit" class="btn btn-block btn-lg">
             </form>
           </div>
-
           <div class="col-lg-3 align-self-center d-none d-lg-block">
-            <img src="../images/logo.png" alt="" class="img-fluid">
+            <img src="./images/logo.png" alt="" class="img-fluid">
           </div>
         </div>
       </div>
