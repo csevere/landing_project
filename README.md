@@ -1,4 +1,4 @@
-# octagon_project
+# Octagon project
 2-page responsive microsite 
 
 ## Workflow and Tools
