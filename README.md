@@ -18,4 +18,9 @@
 		c. Bitnami MAMP Stack for php and database 
 	9. Create a repo on github
 	10. Adhere to a proper coding style 
-	11. Create issues/branches on github for organization/debugging/testing  
+	11. Create issues/branches on github for organization/debugging/testing 
+	
+	
+	<p align='center'>
+  		<img src="homescreen.png">
+	</p>
