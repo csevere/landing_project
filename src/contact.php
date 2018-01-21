@@ -17,23 +17,19 @@
 
 	<body class="contactform">
 		<?php
-
+			
+			// echo "<meta http-equiv='refresh' content='0'>";
 			$configs = include('config.php');
-			echo json_encode($configs->pass);
+			// echo json_encode($configs->pass);
 			$host = $configs->host;  
 			$pass = $configs->pass;  
 			$user = $configs->user;  
 			$dbname = $configs->dbname; 
 			
-			// echo $host;
-			// echo $pass;
-			// echo $user;
-			// echo $dbname; 
-
+			
 			try {
-				$conn = new PDO('mysql:host=localhost;dbname='.$dbname, $user, $pass);
-				 echo "connected"; 
-				// $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				$conn = new PDO('mysql:host='.$host.';dbname='.$dbname, $user, $pass);
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				// echo "connected"; 
 				if(isset($_POST['submit'])){
 					$firstname = $_POST['firstname'];
@@ -47,98 +43,56 @@
 
 					$fnamerror = 'Name must contain letters only.';
 					$fnamerror2 = 'Please enter a first name.';
-					$laamerror = 'Please enter a valid last name';
-					$laamerror2 = 'Please enter a last name.';
+					$lnamerror = 'Please enter a valid last name';
+					$lnamerror2 = 'Please enter a last name.';
 					$emailerror = 'Please enter a valid email address.';
 					$ziperror = 'Please enter a valid zipcode.';
 					$ziprror2 = 'Please enter a zipcode';
 					$messerror = 'Please write a message';
-					$messerror2 = 'Message is too long';
+					$messerror2 = 'Message is too long';	
 
-					// if(isset($firstname)){
-					// 	if (ctype_alpha($firstname) === false && $firstname !='') {
-					// 		echo '<div style="color:red;">' . $fnamerror . '</div>';
-					// 	}
-					// 	if ($firstname === '') {
-					// 		echo '<div style="display:none;">' . $fnamerror2 . '</div>'; 
-					// 	}
-					// }
-
-
-					// if(isset($lastname)){
-					// 	if (ctype_alpha($lastname) === false && $lastname !='') {
-					// 		echo $laamerror;
-					// 	}
-					// 	if ($lastname === '') {
-					// 		echo $laamerror2;
-					// 	}
-					// }
+					//form validation and redirecting to home page upon successful submission 
 					
-				 
-				// if (isset($email)) {
-				// 	$email = filter_var($email, FILTER_SANITIZE_EMAIL);
-				// 	if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-				// 			echo ''; 
-				// 	} else {
-				// 			echo  $emailerror;
-				// 	}
-				// }
-
-				// if(isset($zipcode)){
-				// 	if (preg_match('#[0-9]{5}#', $zipcode) && $zipcode !='')
-				// 		return true;
-				// 	else
-				// 		echo $ziperror;
-				// 	if($zipcode === ''){
-				// 		echo 	$ziprror2; 
-				// 	}
-				// }
-
-				// if(isset($message)){
-				// 	if($message === ''){
-				// 		echo $messerror; 
-				// 	}
-				// 	if (strlen($message) > 280){
-				// 		echo $messrror2; 
-				// 	}
-				// }
-					
-
-					$insert = $conn->prepare('INSERT INTO guests (firstname, lastname, email, zipcode, state, message)
+					if($firstname == ''|| $lastname == '' || $email =='' || $zipcode == '' || $message == ''){
+						echo "<div style='display:none;'>Cannot leave fields empty!</div>";
+					}elseif(ctype_alpha($firstname) === false && $firstname !='') {
+						// echo  "<div style='display:none;'>".$fnamerror."</div>"; 
+						echo ''; 
+					}elseif(!preg_match('/^([a-zA-Z]+[\'-]?[a-zA-Z]+[ ]?)+$/', $lastname)){
+						echo '';
+					}elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+						echo '';
+					}elseif(!preg_match('#[0-9]{5}#', $zipcode)){
+						echo '';
+					}else{
+						$insert = $conn->prepare('INSERT INTO guests (firstname, lastname, email, zipcode, state, message)
 						values(:firstname,:lastname,:email,:zipcode,:state,:message)');
 
-					$insert->bindParam(':firstname',$firstname);
-					$insert->bindParam(':lastname',$lastname);
-					$insert->bindParam(':email',$email);
-					$insert->bindParam(':zipcode',$zipcode);
-					$insert->bindParam(':state',$state);
-					$insert->bindParam(':message',$message);
+						$insert->bindParam(':firstname',$firstname);
+						$insert->bindParam(':lastname',$lastname);
+						$insert->bindParam(':email',$email);
+						$insert->bindParam(':zipcode',$zipcode);
+						$insert->bindParam(':state',$state);
+						$insert->bindParam(':message',$message);
+						header("Location:/octagon_projectx/src/");
 
-					$insert->execute();
-					// echo "submitted form"; 
-					// echo 	$firstname; 
-					// echo 	$state;
+						$insert->execute();
+				
+					}
+					
 				}
+				
 			}
 
 			catch(PDOException $e){
 				echo "error" . $e->getMessage(); 
-			}
-		
+			}	
 
-			// Cl1Ru6yIpUXPgE2j
-		
-		
-		
-		
 		?>
-
-
-
 		<nav class="navbar navbar-expand-md">
 			<div class="container">
 					<img src="./images/logo.png" width = "50" height = "50" alt="">
-				<a href="index.html" class="navbar-brand">Phantom Reality</a>
+				<a href="index.php" class="navbar-brand">Phantom Reality</a>
 				<button class="navbar-toggler" data-toggle="collapse" data-target="#navNavbar"><span class="icon"><i class="fa fa-bars" aria-hidden="true"></i></span></button>
 				<div class="collapse navbar-collapse" id="navNavbar">
 					<ul class="navbar-nav ml-auto">
@@ -173,7 +127,7 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eum tenetur dolores 
             </p>
 					
-            <form action="contact.php" method="POST">
+            <form action="" method="POST" on="window.location.assign('index.php')">
 
               <div class="form-group">
                 <div class="input-group-lg d-flex flex-column">
@@ -200,10 +154,10 @@
 										<?php 
 											if(isset($lastname)){
 												if (ctype_alpha($lastname) === false && $lastname !='') {
-													echo $laamerror;
+													echo $lnamerror;
 												}
 												if ($lastname === '') {
-													echo $laamerror2;
+													echo $lnamerror2;
 												}
 											}
 										?>
@@ -235,7 +189,8 @@
 									<div style="color:red;">
 											<?php
 													if(isset($zipcode)){
-														if (preg_match('#[0-9]{5}#', $zipcode)|| $zipcode ='')
+														if (preg_match('#[0-9]{5}#', $zipcode) || $zipcode = '')
+														// if (preg_match('#[0-9]{5}#', $zipcode) || $zipcode = '')
 															return true;
 														else
 															echo $ziperror;
@@ -247,6 +202,7 @@
 
 							<div class="form-group">
 								<div class="input-group input-group-lg">
+									<input type="hidden" value="2" />
 									<select id="inputState" class="form-control" name="state">
 										<option selected>Choose State...</option>
 										<option value="AL">Alabama</option>
@@ -301,6 +257,7 @@
 										<option value="WI">Wisconsin</option>
 										<option value="WY">Wyoming</option>
 									</select>
+									
 								</div>
 							</div>
 
@@ -332,26 +289,26 @@
 		</section>
 
 		<footer class="footer p-5 text-white">
-				<div class="container">
-					<div class="row d-flex flex-column no-gutters">
-						<div class="footer-socialmedia mr-auto p-2">
-							<a href=""><i class="fa fa-facebook pr-3" aria-hidden="true"></i></a>
-							<a href=""><i class="fa fa-twitter pr-3" aria-hidden="true"></i></a>
-							<a href=""><i class="fa fa-youtube pr-3" aria-hidden="true"></i></a>
-							<a href=""><i class="fa fa-twitch pr-3" aria-hidden="true"></i></a>
-						</div>
-						<div class="footer-links1 mr-auto p-2">
-							For business inqueries <i class="fa fa-arrow-right p-2" aria-hidden="true"></i> <a href="#">partnerships@phantomrealitylabs.com</a>
-						</div>
-						<div class="footer-links2 mr-auto p-2">
-							<a class="pr-2"href="">Press</a>|<a class="p-2" href="">Terms</a>|<a class="p-2" href="">Privacy</a>
-						</div>
-						<div class="mr-auto rights p-2">
-								<p>Copyright &copy; 2018 Phantom Reality, Inc. All Rights Reserved.</p>
-						</div>
+			<div class="container">
+				<div class="row d-flex flex-column no-gutters">
+					<div class="footer-socialmedia mr-auto p-2">
+						<a href=""><i class="fa fa-facebook pr-3" aria-hidden="true"></i></a>
+						<a href=""><i class="fa fa-twitter pr-3" aria-hidden="true"></i></a>
+						<a href=""><i class="fa fa-youtube pr-3" aria-hidden="true"></i></a>
+						<a href=""><i class="fa fa-twitch pr-3" aria-hidden="true"></i></a>
+					</div>
+					<div class="footer-links1 mr-auto p-2">
+						For business inqueries <i class="fa fa-arrow-right p-2" aria-hidden="true"></i> <a href="#">partnerships@phantomrealitylabs.com</a>
+					</div>
+					<div class="footer-links2 mr-auto p-2">
+						<a class="pr-2"href="">Press</a>|<a class="p-2" href="">Terms</a>|<a class="p-2" href="">Privacy</a>
+					</div>
+					<div class="mr-auto rights p-2">
+							<p>Copyright &copy; 2018 Phantom Reality, Inc. All Rights Reserved.</p>
 					</div>
 				</div>
-			</footer>
+			</div>
+		</footer>
 		
 
 		<!--build:js js/main.min.js -->
@@ -364,6 +321,5 @@
 		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 		<script type="text/javascript" src="slick/slick.min.js"></script>
 		
-
 	</body>
 </html>
