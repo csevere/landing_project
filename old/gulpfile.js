@@ -10,38 +10,7 @@ const cache = require('gulp-cache');
 const del = require('del'); 
 const runSequence = require('run-sequence'); 
 const postcss = require('gulp-postcss');
-const autoprefixer = require('gulp-autoprefixer');
-var mamp = require('gulp-mamp');
-
-
-
-var options = {};
- 
-gulp.task('start', function(cb){
-    mamp(options, 'start', cb);
-});
- 
-gulp.task('stop', function(cb){
-    mamp(options, 'stop', cb);
-});
- 
-gulp.task('mamp', ['start']);
-
-// connect = require('gulp-connect-php');
-
-
-// gulp.task('php', function() {
-// 	connect.server({}, function (){
-// 	browserSync({
-// 		proxy: '192.168.64.2/octagon-project/src'
-// 	});
-// });
-
-// gulp.watch('**/*.php').on('change', function () {
-// 	browserSync.reload();
-// 	});
-// });
-
+const autoprefixer = require('gulp-autoprefixer'); 
 
 //Compile Sass & Inject Into Browser
 gulp.task('sass', function(){
@@ -49,7 +18,7 @@ gulp.task('sass', function(){
 	.pipe(sass())
 	//tell it where to compile our scss files
 	.pipe(gulp.dest("src/css"))
-	// .pipe(browserSync.stream());
+	.pipe(browserSync.stream());
 });
 
 //Move JS Files to src/js
@@ -60,12 +29,11 @@ gulp.task('js', function(){
 	.pipe(browserSync.stream()); 
 }); 
 
-// Watch Sass & Server
+//Watch Sass & Server
 
 gulp.task('serve', ['sass'], function(){
 	browserSync.init({
-			// server: "./src"
-			proxy: 'localhost:8080'
+			server: "./src"
 	});
 
 	gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss', 'src/scss/*.scss'], ['sass'])
@@ -145,7 +113,7 @@ gulp.task('clean:dist', function() {
 
 //Build Sequences 
 gulp.task('default', function (callback) {
-  runSequence(['serve','fa', 'js', 'styles', 'mamp'],
+  runSequence(['serve','fa', 'js', 'styles'],
     callback
   )
 });
