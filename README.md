@@ -23,13 +23,13 @@
 	
 	
 <p align='center'>
-  <img src="homescreen.png">
+  <img src="readme/homescreen.png">
 </p>
 
 <p align='center'>
-  <img src="sample.png">
+  <img src="readme/sample.png">
 </p>
 
 <p align='center'>
-  <img src="phpvalidation.png">
+  <img src="readme/phpvalidation.png">
 </p>
