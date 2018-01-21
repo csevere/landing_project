@@ -12,7 +12,8 @@
 	6. Preprocessor: Sass
 	7. Browser: Google Chrome
 	8. tools: 
-		a. gulp > set up a live server, compile Sass to CSS, refresh browser everytime I save, optimize all my assets (CSS, JS, fonts, images) for production 
+		a. gulp > set up a live server, compile Sass to CSS, 
+		refresh browser everytime I save, optimize all my assets (CSS, JS, fonts, images) for production 
 		b. Google's Dev-tools to debug
 		c. Bitnami MAMP Stack for php and database 
 	9. Create a repo on github
