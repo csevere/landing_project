@@ -3,7 +3,8 @@
 
 ## Workflow and Tools
 
-	1. Get a clear picture of what I'm making. I'm modeling http://baseball.doosan.com/ but I'm going to be a total nerd and hand draw the wireframe without all the fancy distractions. 
+	1. Get a clear picture of what I'm making. I'm modeling http://baseball.doosan.com/ 
+	but I'm going to be a total nerd and hand draw the wireframe without all the fancy distractions. 
 	2. Open terminal interface: https://hyper.is/
 	3. Download my starter pack for making a website 
 	4. Check my package.json to make sure I have all my starter dependencies and then npm install.
