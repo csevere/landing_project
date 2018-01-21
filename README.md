@@ -1,7 +1,7 @@
 # octagon_project
 2-page responsive microsite 
 
-##Workflow and Tools
+## Workflow and Tools
 
 	1. Get a clear picture of what I'm making. I'm modeling http://baseball.doosan.com/ but I'm going to be a total nerd and hand draw the wireframe without all the fancy distractions. 
 	2. Open terminal interface: https://hyper.is/
@@ -15,5 +15,5 @@
 		b. Google's Dev-tools to debug
 		c. Bitnami MAMP Stack for php and database 
 	9. Create a repo on github
- 10. Adhere to a proper coding style 
- 11. Create issues/branches on github for organization/debugging/testing  
+	10. Adhere to a proper coding style 
+	11. Create issues/branches on github for organization/debugging/testing  
