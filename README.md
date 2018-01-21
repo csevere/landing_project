@@ -21,6 +21,7 @@
 	11. Create issues/branches on github for organization/debugging/testing 
 	
 	
-	<p align='center'>
-  		<img src="homescreen.png">
-	</p>
+	
+<p align='center'>
+  <img src="homescreen.png">
+</p>
