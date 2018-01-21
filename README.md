@@ -30,6 +30,7 @@
   <img src="readme/sample.png">
 </p>
 
+## Validation done with PHP
 <p align='center'>
   <img src="readme/phpvalidation.png">
 </p>
