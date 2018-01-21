@@ -34,3 +34,14 @@
 <p align='center'>
   <img src="readme/phpvalidation.png">
 </p>
+
+## Old code
+<p align='center'>
+  <img src="readme/oldcode.png">
+</p>
+
+## Rewritten for redirection after form submission 
+<p align='center'>
+  <img src="readme/refactored.png">
+</p>
+
