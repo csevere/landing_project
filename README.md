@@ -25,3 +25,7 @@
 <p align='center'>
   <img src="homescreen.png">
 </p>
+
+<p align='center'>
+  <img src="sample.png">
+</p>
