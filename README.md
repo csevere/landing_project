@@ -35,7 +35,7 @@
   <img src="readme/phpvalidation.png">
 </p>
 
-## Old code
+## Old code for connecting to database/validation/database query
 <p align='center'>
   <img src="readme/oldcode.png">
 </p>
