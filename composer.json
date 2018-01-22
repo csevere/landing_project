@@ -1,0 +1,15 @@
+{
+    "name": "carlita/octagon_project",
+    "authors": [
+        {
+            "name": "csevere",
+            "email": "carla.severe@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "ext-PDO": "^7.1",
+        "ext-pdo_mysql": "^7.1",
+        "ext-pdo_sqlite": "^7.1"
+    }
+}
