@@ -1,4 +1,4 @@
-# Octagon project
+# Dummy landing page
 2-page responsive microsite 
 
 ## Workflow and Tools
